@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-[#070A11] text-slate-100 antialiased selection:bg-indigo-500 selection:text-white font-sans;
+  }
+}
+
+/* Custom developer dashboard scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #070A11;
+}
+::-webkit-scrollbar-thumb {
+  background: #1E293B;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+
+/* Premium Dark SaaS Glass Cards */
+.saas-card {
+  background: #0D121F;
+  border: 1px solid #1E293B;
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.4);
+}
+
+.saas-card-interactive {
+  background: #0D121F;
+  border: 1px solid #1E293B;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.saas-card-interactive:hover {
+  border-color: #334155;
+  box-shadow: 0 8px 30px -4px rgba(0, 0, 0, 0.6);
+  transform: translateY(-1px);
+}
+
+/* Subtle Glow Effects */
+.glow-subtle-indigo {
+  box-shadow: 0 0 20px -5px rgba(99, 102, 241, 0.15);
+}
+
+.glow-subtle-emerald {
+  box-shadow: 0 0 20px -5px rgba(16, 185, 129, 0.15);
+}
