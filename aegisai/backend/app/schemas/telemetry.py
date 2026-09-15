@@ -1,6 +1,6 @@
 from datetime import datetime
 from typing import Optional, List
-from pydantic import BaseModel
+from pydantic import BaseModel, ConfigDict
 
 class TelemetryPoint(BaseModel):
     id: str
@@ -9,8 +9,7 @@ class TelemetryPoint(BaseModel):
     metric_type: str
     value: float
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
 
 class TelemetryCreate(BaseModel):
     metric_type: str

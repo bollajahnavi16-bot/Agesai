@@ -1,6 +1,6 @@
 from datetime import datetime
 from typing import Optional, List
-from pydantic import BaseModel
+from pydantic import BaseModel, ConfigDict
 
 class ProjectCreate(BaseModel):
     name: str
@@ -17,8 +17,7 @@ class ProjectResponse(BaseModel):
     status: str
     health_score: float
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
 
 class FileItem(BaseModel):
     path: str

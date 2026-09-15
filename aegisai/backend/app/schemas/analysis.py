@@ -1,6 +1,6 @@
 from datetime import datetime
 from typing import Optional, List, Dict, Any
-from pydantic import BaseModel
+from pydantic import BaseModel, ConfigDict
 from app.schemas.finding import FindingResponse
 
 class AnalysisResponse(BaseModel):
@@ -12,8 +12,7 @@ class AnalysisResponse(BaseModel):
     files_analyzed: int
     summary: Optional[str] = None
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
 
 class HealthBreakdown(BaseModel):
     code_quality: float
